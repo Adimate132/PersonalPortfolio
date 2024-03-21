@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- nunito font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="homePage.css">
+    <title>Home Page</title>
+</head>
+<body>
+    <div class="homepage-wrap">
+        <!-- home stuff here -->
+
+        <div class="content-wrap">
+           <!-- homepage content --> 
+
+           <div id="side-nav">
+                <h1>Navigate</h1> 
+                <ul id="nav-list"> 
+                    <li id="search-btn">Search</li>
+                    <li id="messages">Messages</li>
+                    <li id="notifications-btn">Notifications</li>
+                    <li id="create-btn">Create</li>
+                    <li id="profile-btn">Profile</li>
+                    <li><a href="../../index.html">Back to Adam's Page</a></li>
+                </ul>
+            </div>
+
+            <div id="posts">
+                <h1> Posts </h1>
+                <div class="testPost">
+                    <h2>Adam's Test Post</h2>
+                    <hr color="#457B9D">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut 
+                        aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate 
+                        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint 
+                        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                        mollit anim id est laborum.
+                    </p>
+                    <img src="./assets/angr.jpeg" alt="cat angr">
+                </div>
+            </div>
+
+            <div id="friends">
+                <span id="welcome-msg">Welcome, </span>
+                <ol id="users">
+                    <!-- users appended here -->
+                </ol>
+            </div>
+
+        </div>
+    </div>
+    
+<script src='./js/homePage.js' type="module"></script>
+</body>
+</html>

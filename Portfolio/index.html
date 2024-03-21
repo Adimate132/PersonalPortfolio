@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- nunito font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+
+    <title> Adam Hassan | Software Engineer </title>
+    <link rel="icon" href="./assets/coffeeIcon.ico">
+    <link rel="stylesheet" href="index.css">
+    <script defer src="index.js" type="module"></script>
+</head>
+<body>
+
+    <!-- preloader -->
+    <div id="preloader"></div>
+
+    <div class="blurred-bg">
+    <!-- submenu -->
+    <div>
+        <ul class="submenu-navbar">
+                <h2 id="name-btn"> Adam Hassan </h2>
+                <li id="about-btn"> About </li>
+                <li id="skills-btn"> Skills </li>
+                <li id="projects-btn">Projects </li>
+                <li id="contact-btn"> Contact </li>
+                <li id="resume-btn"> Resume </li>
+                <li id="login-btn"> Login </li>
+        </ul>
+    </div>
+
+    <!-- display -->
+    <div class='display'>
+        <div class="innerWrap">
+            <div>
+                <p> Hello! My name is </p>
+                <h2> Adam Hassan </h2>
+                <h3> Front-End Developer | Software Engineer </h3>
+                <p> I created this page to showcase my <span> current projects. </span></p>
+                <p> You can check out my work via the 'Projects' submenu navigation. </p>
+                <p> Or, you can read more about me in my <span>about section.</span></p>
+                <p> If you wish to reach me, or have any bugs to report, </p> 
+                <p> please feel free to <span>leave a message.</span> </p>
+                <p> Thank you for visiting. </p>
+            </div>
+            <div class="imgBox">
+                <img src="./assets/me_at_grad.jpg" alt="Photo of Adam at Graduation">
+            </div>
+        </div>
+        <div class="about-section">
+            <h1> About My </h1>
+            <div class="past-present-section">
+                <div>
+                    <h2> Past </h2>    
+                    <div>      
+                        <p>
+                            I discovered my passion for programming
+                            at 16 in highschool. Taking my first 
+                            intro to Java course opened my eyes to 
+                            the endless potential of being able to
+                            create my own programs. Over the summer
+                            leading into college I began working
+                            towards my dream of 
+                            becoming a software developer. 
+                        </p>
+                    </div>
+                </div>
+                <div>
+                    <h2> Present </h2>
+                    <div>
+                        <p>
+                            Now, as a student in my sophomore year at
+                            The University of Texas at Dallas, 
+                            I am continue to work towards that dream.
+                            In my pursuit, I find myself working 
+                            on personal projects in my free time
+                             or getting involved with the Computer 
+                             Science events at or near my campus.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="future-section">
+                <h2> Future </h2>
+                <div>
+                    <p>
+                        Looking ahead, I am excited to see
+                        what new technologies and skills will emerge
+                        and where I will end up admist the innovation.
+                        The opportunities for personal and collective 
+                        growth lie not only in my hands, but
+                        in the hands of the millions of other aspiring
+                        developers like me. 
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="skills-section">
+            <h1> Skills </h1>
+            <div>
+                <h2> Front End & Styling </h2>
+                <div>
+                    <ul class="front-end-skills-list">
+                        <li> React </li>
+                        <li> TypeScript </li>
+                        <li> HTML </li>
+                        <li> CSS </li>
+                        <li> JavaScript </li>
+                        <li> Firebase </li>
+                    </ul>
+                </div>
+                <br><br>
+                <h2> Miscellaneous </h2>
+                <div>
+                    <ul class="miscellaneous-skills-list">
+                        <li> C++ </li>
+                        <li> Java </li>
+                        <li> Python </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class ='projects-section'>
+            <h1> Projects </h1>
+            <div class="projects-list">
+                <div>
+                    <img src="./assets/Screenshot 2024-02-27 022141.png" alt="Message test image" onclick="window.location.href='./projects/FirebaseTest/storeTest.html'">
+                    <div>
+                        <h2> Message Test </h2>
+                        <h3> Made with: HTML, CSS, JavaScript, Firebase </h3>
+                        <p> Display of CSS art skill and used to test first use of Firebase. </p>
+                    </div>
+                </div>
+                <div>
+                    <img src="./assets/userTestSS.png" alt="Message test image" onclick="window.location.href='./projects/UserTest/login.html'">
+                    <div>
+                        <h2> User Test (WIP) </h2>
+                        <h3> Made with: HTML, CSS, JavaScript, Firebase </h3>
+                        <p> Mock up social site with core social app features. </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="contact-section">
+            <h1> Contact (WIP) </h1>
+            <div>
+                <form id="contact-form">
+                    <div class="contact-form">
+                        <input required class='name' type="text" placeholder="Enter Name">
+                        <input required class='email-field' type="text" placeholder="Enter Email">
+                        <textarea 
+                            required 
+                            class='msg-field' 
+                            type="text" 
+                            placeholder="Enter Message"
+                            rows="5"
+                            cols="3"
+                        ></textarea>
+                        <button class='submit-btn' type="submit"> Submit </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <h4> © 2023-Present Adam Hassan. All Rights Reserved </h4>
+    </div>
+    </div> <!-- blurred bg -->
+
+
+</body>
+</html>

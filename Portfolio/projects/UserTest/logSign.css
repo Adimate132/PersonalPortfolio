@@ -1,0 +1,84 @@
+/*
+#F1FAEE - highlight
+#A8DADC - border
+#457B9D - inner background
+#1D3557 - background
+*/
+html, body {
+    background-color: #1D3557;
+    color: #F1FAEE;
+    font-family: sans-serif;
+    margin: 0; 
+
+    height: 100vh;
+}
+
+a:link {
+    color: #F1FAEE;
+}
+a:visited {
+    color: #A8DADC;
+}
+
+.logSignWrap {
+
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+
+.logSignBox {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 40%;
+    margin: 0 auto;
+
+    border: 2px outset #A8DADC;
+    border-radius: 10px;
+    padding: 10px;
+
+    background-color: #457B9D;
+
+    
+}
+.logSignBox input {
+    width: 40%;
+    margin: 5px 0 10px 0;
+
+    padding: 5px;
+    font-size: 15px;
+    border: 0px;
+    border-radius: 5px;
+
+    background-color: #F1FAEE;
+
+}
+.logSignBox input:focus {
+    background-color: #F1FAEE;
+    outline: 0;
+}
+
+.logSignBox button {
+    width: 20%;
+    height: 25px;   
+    border: 0px;
+    border-radius: 3px;
+    font-size: 15px;
+    
+    overflow-x: hidden;
+
+    transition: .1s;
+}
+.logSignBox button:hover {
+    opacity: .8;
+}
+.logSignBox button:active {
+    opacity: .5;
+
+}

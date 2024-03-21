@@ -1,0 +1,175 @@
+html, body {
+    --background: #ece0d1;
+    --inner-background: #dbc1ac;
+    --highlight: #967259;
+    --text: #38220f;
+    font-family: Nunito, sans-serif;
+
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    background-color: var(--background);
+    color: var(--text);
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+#preloader {
+    background: var(--background) url(../assets/coffeeLoadTransparent.gif);
+    background-repeat: no-repeat;
+    background-position: center;
+    border-bottom: 3px solid var(--inner-background);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-size: 40%;
+    height: 100vh; 
+    width: 100vw;
+    position: fixed;
+    position: top;
+    overflow: hidden;
+    box-shadow: 0 0 10px var(--text);
+    
+    z-index: 1;
+}
+.loaded {
+    animation: collapse .5s;
+}
+
+@keyframes collapse {
+    0% {
+        bottom: 0%;
+    }
+    100% {
+        bottom: 100%;
+    }
+}
+
+.submenu-navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: var(--inner-background);
+
+    list-style: none;
+    font-size: 1.75em;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+}
+.submenu-navbar li {
+    flex-grow: 1;
+    text-align: center;
+    
+}
+.submenu-navbar li:first-child {
+    font-size: 1.5em;
+}
+.submenu-navbar li:nth-child(n+2) {
+    transition: .5s;
+    padding: 1.5% 0;
+}
+.submenu-navbar li:nth-child(n+2):hover {
+    background-color: var(--highlight);
+    color: var(--background);
+    text-shadow: 0 0 5px var(--background);
+}
+.submenu-navbar li:nth-child(n+2):active {
+    transition: .2s;
+    opacity: .6;
+}
+.display {
+    margin-top: 3vh;
+    padding-bottom: 1%;
+    text-align: center;
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.wrap {
+    border-radius: 10px;
+    box-shadow: 0 0 8px var(--highlight);
+    background-color: var(--inner-background);
+    height: auto;
+    width: 70vh;
+
+}
+.wrap h1 {
+    margin-bottom: 15%;
+}
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    margin: 0 5%;
+}
+.contact-form input, textarea {
+    width: 100%;
+    font-size: 1.2em;
+    margin-bottom: 5%;
+    border: 0px;
+    border-radius: 12px;
+    padding: 2% 0;
+    background-color: var(--background);
+    color: var(--text);
+    box-shadow: inset 0 0 5px var(--highlight);
+    transition: .3s;
+    box-sizing: border-box;
+    outline: 0px;
+    font-family: inherit;
+}
+.contact-form input[type=text] {
+    padding-left: 3%;
+
+}
+.contact-form button {
+    width: 30%;
+    min-height: 35px;
+    margin: 0 auto;
+    margin-bottom: 10%;
+
+    border-radius: 50px;
+    font-weight: bold;
+
+    box-shadow: 0 0 3px var(--highlight);
+    border: 0;
+    font-size: 1.2em;
+    font-family: inherit;
+    background-color: var(--background);
+    color: var(--text);
+    transition: .3s;
+}
+.contact-form button:hover {
+    opacity: .7;
+    cursor: pointer;
+}
+.contact-form button:active {
+    box-shadow: 0 0 8px var(--highlight);
+}
+
+
+.msg-field {
+    padding-inline: 10px;
+    height: auto;
+    resize: none;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: none;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: var(--highlight);
+    border-radius: 5px;
+  }

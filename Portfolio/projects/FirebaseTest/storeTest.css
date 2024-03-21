@@ -1,0 +1,154 @@
+html, body {
+
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+
+    background-color: rgb(36, 36, 36);;
+    font-family: sans-serif;
+    height: 780px;
+    width: 400px;
+}
+
+h1 {
+    color: #39ff5a;
+    text-align: center;
+
+}
+
+.contentWrap {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    margin-top: 25px;
+    margin-left: 15px;
+    
+}
+
+#input-field {
+    padding-left: 10px;
+}
+#input-field, #inputName {
+
+    width: 235px;
+    padding: 0 10px;
+
+    height: 30px;
+    font-size: 20px;
+    color: white;
+    border: 1px solid #818181;
+    border-radius: 50px;
+    background-color: inherit;
+
+}
+#input-field:focus {
+    outline: 0;
+}
+
+#submit-btn {
+
+    border-radius: 10px;
+    padding: 5px;
+    font-size: 18px;
+    margin-left: 5px;
+    
+    border: 0;
+    font-weight: bold;
+
+    background-color: #218aff;
+    color: white;
+    translate: .3s;
+
+}
+#submit-btn:hover {
+    cursor: pointer;
+    border: 1px solid white;
+}
+#submit-btn:active {
+    opacity: .7;
+}
+
+h1 {
+    margin-top: 15px;
+}
+
+.phoneInnerBorder {
+    height: 100%;
+    border: 3px solid black;
+    border-radius: 20px;
+
+    background-color: #161618;
+}
+.homeSlider {
+    width: 33%;
+    height: 3px;
+    border-radius: 20px;
+}
+
+.phoneCamera {
+    padding: 10px;
+    border: 3px solid black;
+
+    width: 30%;
+    margin: 0 auto;
+    
+    border-top: 0px;
+    border-radius: 0px 0px 30px 30px;
+    background-color: black;
+}
+
+.tableWrap {
+
+    border: 2px outset black;
+    outline: 3px solid black;
+    padding: 5px 3px 10px 3px;
+    border-radius: 30px;
+
+    width: 350px;
+    height: 600px;
+    margin: 25px auto;
+
+}
+
+#tableContent {
+    height: 415px;
+    width: 100%;
+
+    overflow-x: auto;
+
+    
+    word-wrap:break-word;
+}
+
+#tableData {
+    font-weight: bold;
+    text-align: center;
+    margin: 20px 10px;
+    
+
+    color: white;
+    border: 0px;
+    background-color: #218aff;
+
+    padding: 13px;
+    border-radius: 30px;
+    
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 3px;
+    height: 3px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: none;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #d8d8d8;
+    border-radius: 5px;
+  }
