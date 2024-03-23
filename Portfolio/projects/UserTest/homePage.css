@@ -208,3 +208,8 @@ a:visited {
     margin-bottom: 3%;
     margin-top: 1%;
 }
+
+
+@media screen and (max-width: 420px) {
+    
+}

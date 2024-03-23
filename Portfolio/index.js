@@ -42,6 +42,10 @@ const contactBtn = document.getElementById('contact-btn');
 const resumeBtn = document.getElementById('resume-btn');
 const loginBtn = document.getElementById('login-btn');
 
+const projectsSpanBtn = document.getElementById('current-projects');
+const aboutSpanBtn = document.getElementById('about-section');
+const contactSpanBtn = document.getElementById('leave-a-message');
+
 // preloader 
 const preloader = document.getElementById('preloader');
 window.addEventListener('load', function() {
@@ -52,8 +56,14 @@ window.addEventListener('load', function() {
     })
 })
 // skills click -> skills section
-skillsBtn.addEventListener('click', function() {
-    document.querySelector('.skills-section').scrollIntoView({behavior: 'smooth'})
+skillsBtn.addEventListener('click', function() { // FIXME: optimize recycled code into function
+    let headerHeight = document.querySelector('.submenu-wrap').offsetHeight
+    let skillsOffset = document.querySelector('.skills-section').offsetTop
+    let skillsPosition = skillsOffset - headerHeight; 
+    window.scrollTo({
+        top: skillsPosition,
+        behavior: 'smooth'
+    })
 })
 
 // name click -> home section
@@ -62,17 +72,62 @@ nameBtn.addEventListener('click', function() {
 })
 // about click -> about section
 aboutBtn.addEventListener('click', function() {
-    //window.location.href = "./sitePages/about.html";
-    document.querySelector('.about-section').scrollIntoView({behavior: 'smooth'})
-    
+    //document.querySelector('.about-section').scrollIntoView({behavior: 'smooth'})  
+    let headerHeight = document.querySelector('.submenu-wrap').offsetHeight
+    let aboutOffset = document.querySelector('.about-section').offsetTop
+    let aboutPosition = aboutOffset - headerHeight; 
+    window.scrollTo({
+        top: aboutPosition,
+        behavior: 'smooth'
+    })
+})
+aboutSpanBtn.addEventListener('click', function() { // second btn
+    let headerHeight = document.querySelector('.submenu-wrap').offsetHeight
+    let aboutOffset = document.querySelector('.about-section').offsetTop
+    let aboutPosition = aboutOffset - headerHeight; 
+    window.scrollTo({
+        top: aboutPosition,
+        behavior: 'smooth'
+    })
 })
 // projects click -> projects section
 projectsBtn.addEventListener('click', function() {
-    document.querySelector('.projects-section').scrollIntoView({behavior: 'smooth'})
+
+    let headerHeight = document.querySelector('.submenu-wrap').offsetHeight
+    let projectsOffset = document.querySelector('.projects-section').offsetTop
+    let projectsPosition = projectsOffset - headerHeight; 
+    window.scrollTo({
+        top: projectsPosition,
+        behavior: 'smooth'
+    })
+})
+projectsSpanBtn.addEventListener('click', function() { // second btn
+    let headerHeight = document.querySelector('.submenu-wrap').offsetHeight
+    let projectsOffset = document.querySelector('.projects-section').offsetTop
+    let projectsPosition = projectsOffset - headerHeight; 
+    window.scrollTo({
+        top: projectsPosition,
+        behavior: 'smooth'
+    })
 })
 // contact click -> contact section
 contactBtn.addEventListener('click', function() {
-    document.querySelector('.contact-section').scrollIntoView({behavior: 'smooth'})
+    let headerHeight = document.querySelector('.submenu-wrap').offsetHeight
+    let contactOffset = document.querySelector('.contact-section').offsetTop
+    let contactPosition = contactOffset - headerHeight - 15; 
+    window.scrollTo({
+        top: contactPosition,
+        behavior: 'smooth'
+    })
+})
+contactSpanBtn.addEventListener('click', function() { // second btn
+    let headerHeight = document.querySelector('.submenu-wrap').offsetHeight
+    let contactOffset = document.querySelector('.contact-section').offsetTop
+    let contactPosition = contactOffset - headerHeight - 15; 
+    window.scrollTo({
+        top: contactPosition,
+        behavior: 'smooth'
+    })
 })
 // resume click -> resume section
 resumeBtn.addEventListener('click', function() {
@@ -82,5 +137,32 @@ resumeBtn.addEventListener('click', function() {
 // admin login
 loginBtn.addEventListener('click', () => {
     window.location.href = "./sitePages/adminLogin/adminLogin.html"
- })
+})
+
+const backToTop = document.createElement('button'); // back to top of page 
+backToTop.textContent = 'Back to top'
+backToTop.classList.add('back-to-top')
+document.body.appendChild(backToTop);
+
+backToTop.addEventListener('click', function() { // if clicked on, scroll to top
+    window.scroll({
+        top: 0,
+        behavior: 'smooth'
+    })
+})
+
+window.addEventListener('scroll', function() {
+    if (window.scrollY == 0 && backToTop.classList.contains('back-to-top')) { // at top of page 
+        backToTop.classList.remove('back-to-top')
+        backToTop.classList.add('fall')
+        backToTop.addEventListener('animationend', function() {
+            backToTop.classList.remove('fall')
+        })
+    }
+    else {
+        backToTop.style.display = 'block'
+        backToTop.classList.add('back-to-top')
+    }
+        
+})
 
