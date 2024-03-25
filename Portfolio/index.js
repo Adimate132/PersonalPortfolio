@@ -39,7 +39,6 @@ const skillsBtn = document.getElementById('skills-btn');
 const aboutBtn = document.getElementById('about-btn');
 const projectsBtn = document.getElementById('projects-btn');
 const contactBtn = document.getElementById('contact-btn');
-const resumeBtn = document.getElementById('resume-btn');
 
 const projectsSpanBtn = document.getElementById('current-projects');
 const aboutSpanBtn = document.getElementById('about-section');
@@ -127,10 +126,6 @@ contactSpanBtn.addEventListener('click', function() { // second btn
         top: contactPosition,
         behavior: 'smooth'
     })
-})
-// resume click -> resume section
-resumeBtn.addEventListener('click', function() {
-    alert("Please try again later.")
 })
 
 const backToTop = document.createElement('button'); // back to top of page 
