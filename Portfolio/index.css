@@ -564,8 +564,15 @@ h1, h2, h3, p {
     .back-to-top, .fall {
         width: 15%;
     }
+    .back-to-top:hover, .fall:hover {
+        background-color: var(--inner-background);
+        color: var(--text);
+        
+        transition: .3s;
+    }
     .submenu-navbar {
-        padding-top: 1%;
+        padding-top: 6%;
+        padding-bottom: 3%;
     }
     .submenu-navbar:first-of-type h2 {
         display: none;
@@ -575,7 +582,7 @@ h1, h2, h3, p {
     }
     .submenu-navbar li {
         font-size: .8em;
-        padding-bottom: 0px;
+        padding-bottom: 0;
     }
     .innerWrap {
         flex-direction: column;
@@ -626,71 +633,8 @@ h1, h2, h3, p {
         margin-bottom: 5%;
     }
     .contact-section {
-        margin: 6%;
+        margin: 15%;
         margin-top: 5%;
-    }
-
-  }
-
-  /* Smaller screened phone*/
-  @media screen and (max-width: 350px) {
-    .display p {
-        font-size: .994em;
-    }
-    .submenu-navbar {
-        display: none;
-    }
-    .innerWrap {
-        flex-direction: column;
-    }
-    .innerWrap {
-        align-items: center;
-    }
-    .innerWrap img {
-        margin: 10% 0;
-        transform: scale(.75);
-    }
-    .past-present-section {
-        flex-direction: column;
-        
-    }
-    .past-present-section > div {
-        margin: 3% 0;
-    }
-    .past-present-section p {
-        font-size: 1.3em;
-        
-    }
-    .future-section {
-        margin: 3% 10%;
-    }
-    .future-section p {
-        font-size: 1.3em;
-    }
-    .skills-section h2 {
-        font-size: 2em;
-    }
-    .front-end-skills-list li {
-        margin: 1% 8% 1% 0;
-    }
-    .miscellaneous-skills-list li {
-        margin: 1% 4% 1% 0;
-    }
-    .projects-list > div {
-        flex-direction: column;
-        padding: 5%;
-        margin: 5%;
-    }
-    .projects-list > div h2 {
-        font-size: 2em;
-    }
-    .projects-list > div img {
-        width: 100%;
-        margin-bottom: 5%;
-    }
-    .contact-section {
-        margin: 3%;
-        margin-top: 10%;
     }
 
   }

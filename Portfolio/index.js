@@ -141,7 +141,6 @@ loginBtn.addEventListener('click', () => {
 
 const backToTop = document.createElement('button'); // back to top of page 
 backToTop.textContent = 'Back to top'
-backToTop.classList.add('back-to-top')
 document.body.appendChild(backToTop);
 
 backToTop.addEventListener('click', function() { // if clicked on, scroll to top
@@ -150,7 +149,11 @@ backToTop.addEventListener('click', function() { // if clicked on, scroll to top
         behavior: 'smooth'
     })
 })
-
+window.addEventListener('load', function() {
+    if (backToTop.classList.contains('back-to-top')) {
+        backToTop.classList.remove('back-to-top')
+    }
+})
 window.addEventListener('scroll', function() {
     if (window.scrollY == 0 && backToTop.classList.contains('back-to-top')) { // at top of page 
         backToTop.classList.remove('back-to-top')
