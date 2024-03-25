@@ -3,10 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- nunito font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
 
     <title> Adam Hassan | Software Engineer </title>
     <link rel="icon" href="./assets/coffeeIcon.ico">
@@ -18,6 +14,8 @@
     <!-- preloader -->
     <div id="preloader"></div>
 
+    <div class="bg-img"> <!-- bg image div -->
+    <div class="blur"> <!-- blur div -->
     <!-- submenu -->
     <div class="submenu-wrap">
         <ul class="submenu-navbar">
@@ -27,7 +25,6 @@
                 <li id="projects-btn">Projects </li>
                 <li id="contact-btn"> Contact </li>
                 <li id="resume-btn"> Resume </li>
-                <li id="login-btn"> Login </li>
         </ul>
     </div>
 
@@ -148,30 +145,24 @@
                 </div>
         </div>
         <div class="contact-section">
-            <h1> Contact (WIP) </h1>
-            <div>
-                <form id="contact-form">
-                    <div class="contact-form">
-                        <input required class='name' type="text" placeholder="Enter Name">
-                        <input required class='email-field' type="text" placeholder="Enter Email">
-                        <textarea 
-                            required 
-                            class='msg-field' 
-                            type="text" 
-                            placeholder="Enter Message"
-                            rows="5"
-                            cols="3"
-                        ></textarea>
-                        <button class='submit-btn' type="submit"> Submit </button>
-                    </div>
-                </form>
+            <h1> Want to reach out? </h1>
+            <div class="contact-items">
+                <img id="gmail-btn" src="./assets/gmail_logo.png" alt="gmail logo" onclick="newTab('mailto:adamhas132@gmail.com?subject=!!%20From%3A%20')">
+                <img id="github-btn" src="./assets/github_logo.png" alt="github logo" onclick="newTab('https://github.com/Adimate132')">
+                <img id="linkedin-btn" src="./assets/linkedin_logo.png" alt="linkedin" onclick="newTab('https://www.linkedin.com/in/adam-hassan-727a84290')">
             </div>
         </div>
-    </div>
+        <script>
+            function newTab(url) {
+                window.open(url, "_blank")
+            }
+        </script>
+    </div> <!-- display -->
     <div class="footer">
         <h4> © 2023-Present Adam Hassan. All Rights Reserved </h4>
     </div>
-
+    </div> <!-- blur div -->
+    </div> <!-- bg image div -->
     
 </body>
 </html>

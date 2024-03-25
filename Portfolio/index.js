@@ -40,7 +40,6 @@ const aboutBtn = document.getElementById('about-btn');
 const projectsBtn = document.getElementById('projects-btn');
 const contactBtn = document.getElementById('contact-btn');
 const resumeBtn = document.getElementById('resume-btn');
-const loginBtn = document.getElementById('login-btn');
 
 const projectsSpanBtn = document.getElementById('current-projects');
 const aboutSpanBtn = document.getElementById('about-section');
@@ -134,11 +133,6 @@ resumeBtn.addEventListener('click', function() {
     alert("Please try again later.")
 })
 
-// admin login
-loginBtn.addEventListener('click', () => {
-    window.location.href = "./sitePages/adminLogin/adminLogin.html"
-})
-
 const backToTop = document.createElement('button'); // back to top of page 
 backToTop.textContent = 'Back to top'
 document.body.appendChild(backToTop);
@@ -168,4 +162,3 @@ window.addEventListener('scroll', function() {
     }
         
 })
-
