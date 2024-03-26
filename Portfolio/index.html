@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Hind:wght@300;400;500;600;700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+    </style>
 
     <title> Adam Hassan | Software Engineer </title>
     <link rel="icon" href="./assets/coffeeIcon.ico">
@@ -35,12 +39,14 @@
                 <p> Hello! My name is </p>
                 <h2> Adam Hassan </h2>
                 <h3> Front-End Developer | Software Engineer </h3>
-                <p> I created this page to showcase my <span id="current-projects"> current projects. </span></p>
-                <p> You can check out my work via the 'Projects' submenu navigation. </p>
-                <p> Or, you can read more about me in my <span id="about-section">about section.</span></p>
-                <p> If you wish to reach me, or have any bugs to report, </p> 
-                <p> please feel free to <span id="leave-a-message">leave a message.</span> </p>
-                <p> Thank you for visiting. </p>
+
+                <p> I am a student at the University of Texas at Dallas </p> 
+                <p> Majoring in Software Engineering. I have been learning </p>
+                <p> to develop projects with the programming skills I have </p>
+                <p> learned in my classes and from courses I have taken in my free time. </p>
+                <p> I created this website to host some of those projects for potential future employers to see.
+                <span id="learn-more"> LEARN MORE </span> </p>
+                
             </div>
             <div class="imgBox">
                 <img src="./assets/me_at_grad.jpg" alt="Photo of Adam at Graduation">
@@ -123,16 +129,16 @@
             <h1> Projects </h1>
             <div class="projects-list">
                 <div>
-                    <img src="./assets/messageTest.png" alt="Message test image" onclick="window.location.href='./projects/FirebaseTest/storeTest.html'">
+                    <img src="./assets/messageTest.png" alt="Message test image" onclick="newTab('./projects/FirebaseTest/storeTest.html')">
                     <div>
                         <h2> Message Test </h2>
                         <h3> Made with: HTML, CSS, JavaScript, Firebase </h3>
                         <p> Display of CSS design skill and used to test first use of Firebase. </p>
-                        <button onclick="window.location.href = './projects/FirebaseTest/storeTest.html'"> Try me! </button>
+                        <button onclick="newTab('./projects/FirebaseTest/storeTest.html')"> Try me! </button>
                     </div>
                 </div>
                 <div>
-                    <img src="./assets/UMeetsSS.png" alt="Message test image" onclick="window.location.href='https://umeets.netlify.app'">
+                    <img src="./assets/UMeetsSS.png" alt="Message test image" onclick="newTab('https://umeets.netlify.app')">
                     <div>
                         <h2> UMeets (WIP) </h2>
                         <h3> Made with: React, Typescript, Firebase </h3>
@@ -140,7 +146,7 @@
                             Mock up social site with core social app features.
                             Created to display both functional and design skills.
                         </p>
-                        <button onclick="window.location.href = 'https://umeets.netlify.app'"> Try me! </button>
+                        <button onclick="newTab('https://umeets.netlify.app')"> Try me! </button>
                     </div>
                 </div>
         </div>

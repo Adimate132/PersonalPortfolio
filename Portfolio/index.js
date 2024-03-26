@@ -39,10 +39,7 @@ const skillsBtn = document.getElementById('skills-btn');
 const aboutBtn = document.getElementById('about-btn');
 const projectsBtn = document.getElementById('projects-btn');
 const contactBtn = document.getElementById('contact-btn');
-
-const projectsSpanBtn = document.getElementById('current-projects');
-const aboutSpanBtn = document.getElementById('about-section');
-const contactSpanBtn = document.getElementById('leave-a-message');
+const learnMoreBtn = document.getElementById('learn-more');
 
 // preloader 
 const preloader = document.getElementById('preloader');
@@ -53,11 +50,24 @@ window.addEventListener('load', function() {
         preloader.style.display = "none"
     })
 })
+
+learnMoreBtn.addEventListener('click', function() {
+
+    let headerHeight = document.querySelector('.submenu-wrap').offsetHeight
+    let aboutOffset = document.querySelector('.about-section').offsetTop
+    let aboutPosition = aboutOffset - headerHeight; 
+
+    window.scrollTo({
+        top: aboutPosition,
+        behavior: 'smooth'
+    })
+})
+
 // skills click -> skills section
 skillsBtn.addEventListener('click', function() { // FIXME: optimize recycled code into function
     let headerHeight = document.querySelector('.submenu-wrap').offsetHeight
     let skillsOffset = document.querySelector('.skills-section').offsetTop
-    let skillsPosition = skillsOffset - headerHeight; 
+    let skillsPosition = skillsOffset - headerHeight - 20; 
     window.scrollTo({
         top: skillsPosition,
         behavior: 'smooth'
@@ -79,30 +89,12 @@ aboutBtn.addEventListener('click', function() {
         behavior: 'smooth'
     })
 })
-aboutSpanBtn.addEventListener('click', function() { // second btn
-    let headerHeight = document.querySelector('.submenu-wrap').offsetHeight
-    let aboutOffset = document.querySelector('.about-section').offsetTop
-    let aboutPosition = aboutOffset - headerHeight; 
-    window.scrollTo({
-        top: aboutPosition,
-        behavior: 'smooth'
-    })
-})
 // projects click -> projects section
 projectsBtn.addEventListener('click', function() {
 
     let headerHeight = document.querySelector('.submenu-wrap').offsetHeight
     let projectsOffset = document.querySelector('.projects-section').offsetTop
-    let projectsPosition = projectsOffset - headerHeight; 
-    window.scrollTo({
-        top: projectsPosition,
-        behavior: 'smooth'
-    })
-})
-projectsSpanBtn.addEventListener('click', function() { // second btn
-    let headerHeight = document.querySelector('.submenu-wrap').offsetHeight
-    let projectsOffset = document.querySelector('.projects-section').offsetTop
-    let projectsPosition = projectsOffset - headerHeight; 
+    let projectsPosition = projectsOffset - headerHeight - 20; 
     window.scrollTo({
         top: projectsPosition,
         behavior: 'smooth'
@@ -110,15 +102,6 @@ projectsSpanBtn.addEventListener('click', function() { // second btn
 })
 // contact click -> contact section
 contactBtn.addEventListener('click', function() {
-    let headerHeight = document.querySelector('.submenu-wrap').offsetHeight
-    let contactOffset = document.querySelector('.contact-section').offsetTop
-    let contactPosition = contactOffset - headerHeight - 15; 
-    window.scrollTo({
-        top: contactPosition,
-        behavior: 'smooth'
-    })
-})
-contactSpanBtn.addEventListener('click', function() { // second btn
     let headerHeight = document.querySelector('.submenu-wrap').offsetHeight
     let contactOffset = document.querySelector('.contact-section').offsetTop
     let contactPosition = contactOffset - headerHeight - 15; 
