@@ -42,10 +42,10 @@ p {
 }
 
 #preloader {
-    background: var(--primary) url(./assets/coffeeLoadTransparent.gif);
+    background: var(--accent) url(./assets/coffeeLoadTransparent.gif);
     background-repeat: no-repeat;
     background-position: center;
-    border-bottom: 3px solid var(--secondary);
+    border-bottom: 3px solid black;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     background-size: 40%;
@@ -54,8 +54,7 @@ p {
     position: fixed;
     position: top;
     overflow: hidden;
-    box-shadow: 0 0 10px var(--text);
-    background-color: var(--accent);
+    box-shadow: inset 0 0 20px 3px black, 0 0 10px black;
 
     z-index: 99;
 }
@@ -92,7 +91,7 @@ p {
     border: 0;
     font-weight: bold;
     cursor: pointer;
-    background-color: var(--secondary);
+    background-color: var(--accent);
     color: var(--text2);
     bottom: 0;
     right: 0;
@@ -117,7 +116,7 @@ p {
     border: 0;
     font-weight: bold;
     cursor: pointer;
-    background-color: var(--secondary);
+    background-color: var(--accent);
     color: var(--text2);
     bottom: 0;
     right: 0;
@@ -201,6 +200,7 @@ p {
 }
 .innerWrap p {
     text-shadow: 5px 5px 5px var(--text2);
+    font-size: 1.12em;
 }
 .innerWrap p > span {
     display: inline-block;
@@ -337,7 +337,7 @@ p {
 .projects-section h1 {
     margin-top: 8%;
     margin-bottom: 3%;
-
+    text-shadow: 3px 3px 3px var(--text2);
     text-align: center;
     font-size: 3em;
 }
@@ -350,8 +350,9 @@ p {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    box-shadow: inset 0 0 3px var(--accent), 0 0 3px var(--secondary);
-    border-radius: 10px;
+    border: 1px solid var(--accent);
+    box-shadow: 3px 3px 3px black;
+    border-radius: 15px;
     margin: 3% 10%;
     padding: 3%;
 }
@@ -362,10 +363,13 @@ p {
     width: 50%;
     border-radius: 10px;
     transition: .3s;
-    box-shadow: 0 0 5px var(--secondary);
+    box-shadow: 2px 2px 3px black;
+    border: 1px solid var(--accent); 
 }
 .projects-list > div img:hover {
-    box-shadow: 0 0 5px 2px var(--secondary);
+    border: 1px solid var(--accent); 
+    box-shadow: 4px 4px 5px black;
+    transform: scale(1.05);
     cursor: pointer;
 }
 .projects-list > div h2 {
@@ -403,10 +407,10 @@ p {
     transform: scale(1.1);
     color: var(--text);
     border: 1px solid var(--accent);
+
 }
 .projects-list > div button:active {
-    background-color: var(--inner-background);
-    box-shadow: 8px 8px 1px var(--secondary);
+    background-color: transparent;
 }
 
 .contact-section h1 {
@@ -444,6 +448,7 @@ p {
 
 .footer {
     text-align: center;
+    color: var(--secondary);
 }
 
 /* width */
@@ -472,6 +477,16 @@ p {
         font-size: 1.5em;
         padding: 1.5%;
     }
+    .innerWrap {
+        flex-direction: column;
+        
+    }
+    .img-box {
+        justify-content: center;
+        align-items: center;
+        margin: 5% auto;
+        margin-bottom: 0;
+    } 
   }
   @media screen and (max-width: 755px) {
     .submenu-navbar:first-of-type h2 {
@@ -524,11 +539,9 @@ p {
     .future-section {
         margin: 3% 10%;
     }
-    .front-end-skills-list li {
+    .front-end-skills-list li, .miscellaneous-skills-list li {
         margin: 1% 4% 1% 0;
-    }
-    .miscellaneous-skills-list li {
-        margin: 1% 4% 1% 0;
+        
     }
     .projects-list > div {
         flex-direction: column;
@@ -559,12 +572,15 @@ p {
 
   /* Average Iphone */
   @media screen and (max-width: 430px) {
+    .innerWrap {
+        font-size: 1.5em;
+    }
     .back-to-top, .fall {
         width: 15%;
     }
     .back-to-top:hover, .fall:hover {
-        background-color: var(--inner-background);
-        color: var(--text);
+        background-color: var(--accent);
+        color: var(--text2);
         
         transition: .3s;
     }
@@ -576,13 +592,16 @@ p {
         display: none;
     }
     .submenu-navbar li {
-        font-size: .8em;
-        padding-bottom: 0;
+        font-size: .75em;
+    }
+    .submenu-navbar li:hover {
+        border-bottom: 2px solid var(--accent);
+    }
+    .submenu-navbar li:active {
+        border-bottom: 2px solid var(--text2);
     }
     .innerWrap {
         flex-direction: column;
-    }
-    .innerWrap {
         align-items: center;
     }
     .innerWrap img {
@@ -606,14 +625,23 @@ p {
     .future-section p {
         font-size: 1.3em;
     }
+    .skills-section {
+        margin-top: 10%;
+        margin-bottom: 30%;
+    }
     .skills-section h2 {
         font-size: 2em;
     }
     .front-end-skills-list li {
         margin: 1% 8% 1% 0;
+        padding: 2% 5%;
     }
     .miscellaneous-skills-list li {
         margin: 1% 4% 1% 0;
+        padding: 2% 5%;
+    }
+    .projects-list {
+        margin-bottom: 20%;
     }
     .projects-list > div {
         flex-direction: column;
@@ -630,6 +658,12 @@ p {
     .contact-items img {
         margin: 10% 10%;
         transform: scale(2);
+    }
+    .contact-section {
+        margin-bottom: 20%;
+    }
+    .footer {
+        font-size: .7em;
     }
 
   }
