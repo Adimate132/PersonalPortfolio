@@ -42,7 +42,7 @@ p {
 }
 
 #preloader {
-    background: #1d1f39 url(./assets/blueGifLoader.gif);
+    background: #202e45 url(./assets/loadingGif3Transparent.gif);
     background-repeat: no-repeat;
     background-position: center;
     border-bottom: 3px solid black;
