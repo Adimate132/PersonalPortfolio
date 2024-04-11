@@ -106,7 +106,7 @@ projectsBtn.addEventListener('click', function() {
 contactBtn.addEventListener('click', function() {
     let headerHeight = document.querySelector('.submenu-wrap').offsetHeight
     let contactOffset = document.querySelector('.contact-section').offsetTop
-    let contactPosition = contactOffset - headerHeight - 15; 
+    let contactPosition = contactOffset - headerHeight; 
     window.scrollTo({
         top: contactPosition,
         behavior: 'smooth'
