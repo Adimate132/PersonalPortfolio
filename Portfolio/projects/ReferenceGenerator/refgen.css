@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+html, body {
+
+    --primary: #CCF2F4;
+    --secondary: #A4EBF3;
+    --accent: #A6D9F7;
+    --whiteFox: white;
+    --blackSnake: black;
+
+    font-family: "Josefin Sans";
+    color: var(--whiteFox);
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+.svg-full {
+    aspect-ratio: 900/400;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+}
+.background-svg {
+    background-image: url(./assets/clouds\ day.svg);
+    position: absolute;
+    margin: 0;
+    padding: 0;
+}
+
+#preloader {
+    background: var(--primary) url(./assets/rain\ day.svg);
+    aspect-ratio: 900/600;
+    background-position: center;
+    border-bottom: 3px solid black;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-size: 30%;
+    height: 100vh; 
+    width: 100vw;
+    position: fixed;
+    position: top;
+    overflow: hidden;
+    box-shadow: inset 0 0 3px black, 0 0 10px black;
+
+    z-index: 99;
+}
+.loaded {
+    animation: collapse 1s ease-in-out;
+}
+
+@keyframes collapse {
+
+    0% {
+        bottom: 0%;
+    }
+
+    50% {
+        bottom: 0%;
+    }
+
+    100% {
+        bottom: 100%;
+    }
+
+}
+
+.container {
+    color: var(--whiteFox);
+    margin: 0 10%;
+    
+}
+
+.header {
+    text-shadow: 0px 0px 2px var(--blackSnake);
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    margin-top: 2%;
+    font-weight: bold;
+}
+
+.content {
+    text-shadow: 0px 0px 2px var(--blackSnake);
+    padding: 1%;
+    background: linear-gradient(to right, var(--primary), var(--secondary), var(--primary));
+    border-radius: 25px;
+    box-shadow: 1px 1px 1px var(--blackSnake);
+}
+
+#form-box {
+    border-radius: 30px;
+    padding: 3% 0%;
+    margin: 2%;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    background: linear-gradient(to right, var(--secondary), var(--accent), var(--secondary));
+    box-shadow: inset 0 0 3px var(--blackSnake);
+
+
+    input, button{ 
+        margin: 1% auto;
+        box-shadow: 0 0 2px var(--blackSnake);
+    }
+    input {
+        width: 30%;
+        border-radius: 10px;
+        outline: 0;
+        border: 0;
+        font-family: inherit;
+        padding: 1% 0;
+        text-indent: 10px;
+        font-size: 1em;
+        background-color: var(--primary);
+        transition: .3s;
+    }
+    input:focus {
+        color: var(--blackSnake);
+    }
+    button {
+        width: 10%;
+        border: 0;
+        border-radius: 10px;
+        padding: 1%;
+        font-weight: bold;
+        cursor: pointer;
+        transition: .3s;
+    }
+    button:hover {
+        transform: scale(1.1);
+        box-shadow: 0 0 4px var(--blackSnake);
+    }
+    button:active {
+        transform: scale(1);
+    }
+}
+
+
+.footer {
+    color: var(--blackSnake);
+    margin-bottom: 1%;
+    text-align: center;
+}
+
+
+@media (max-width: 450px) {
+    .layerFormat {
+        aspect-ratio: 400/900;
+    }
+
+    .content { 
+        min-height: 225px;
+    }
+
+    #form-box {
+        margin: 5%;
+
+        input {
+            width: 70%;
+            min-height: 30px;
+            font-size: 1.5em;
+        }
+        button {
+            width: 30%;
+            min-height: 30px;
+            font-size: 1.5em;
+            margin-top: 2%;
+        }
+    }
+}
