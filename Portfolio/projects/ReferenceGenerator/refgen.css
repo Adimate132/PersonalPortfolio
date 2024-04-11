@@ -103,43 +103,41 @@ html, body {
     gap: 3px;
     background: linear-gradient(to right, var(--secondary), var(--accent), var(--secondary));
     box-shadow: inset 0 0 3px var(--blackSnake);
-
-
-    input, button{ 
-        margin: 1% auto;
-        box-shadow: 0 0 2px var(--blackSnake);
-    }
-    input {
-        width: 30%;
-        border-radius: 10px;
-        outline: 0;
-        border: 0;
-        font-family: inherit;
-        padding: 1% 0;
-        text-indent: 10px;
-        font-size: 1em;
-        background-color: var(--primary);
-        transition: .3s;
-    }
-    input:focus {
-        color: var(--blackSnake);
-    }
-    button {
-        width: 10%;
-        border: 0;
-        border-radius: 10px;
-        padding: 1%;
-        font-weight: bold;
-        cursor: pointer;
-        transition: .3s;
-    }
-    button:hover {
-        transform: scale(1.1);
-        box-shadow: 0 0 4px var(--blackSnake);
-    }
-    button:active {
-        transform: scale(1);
-    }
+}
+#form-box input, #form-box button{ 
+    margin: 1% auto;
+    box-shadow: 0 0 2px var(--blackSnake);
+}
+#form-box input {
+    width: 30%;
+    border-radius: 10px;
+    outline: 0;
+    border: 0;
+    font-family: inherit;
+    padding: 1% 0;
+    text-indent: 10px;
+    font-size: 1em;
+    background-color: var(--primary);
+    transition: .3s;
+}
+#form-box input:focus {
+    color: var(--blackSnake);
+}
+#form-box button {
+    width: 10%;
+    border: 0;
+    border-radius: 10px;
+    padding: 1%;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .3s;
+}
+#form-box button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 4px var(--blackSnake);
+}
+#form-box button:active {
+    transform: scale(1);
 }
 
 
@@ -161,17 +159,16 @@ html, body {
 
     #form-box {
         margin: 5%;
-
-        input {
-            width: 70%;
-            min-height: 30px;
-            font-size: 1.5em;
-        }
-        button {
-            width: 30%;
-            min-height: 30px;
-            font-size: 1.5em;
-            margin-top: 2%;
-        }
+    }
+    #form-box input {
+        width: 70%;
+        min-height: 30px;
+        font-size: 1.5em;
+    }
+    #form-box button {
+        width: 30%;
+        min-height: 30px;
+        font-size: 1.5em;
+        margin-top: 2%;
     }
 }
