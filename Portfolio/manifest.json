@@ -1,0 +1,10 @@
+{
+    "name": "Adam's Portfolio Page",
+    "short_name": "Adam's Page",
+    "start_url": "/index.html",
+    "display": "browser",
+    "background_color": "#202e45",
+    "theme_color": "#202e45",
+    "description": "Adam's Portfolio Page"
+}
+  
