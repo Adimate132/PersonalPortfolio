@@ -12,10 +12,12 @@ window.addEventListener('load', function() {
 const startForm = document.getElementById('form-box');
 
 
-startForm.addEventListener('click', function(e) {
+startForm.addEventListener('submit', function(e) {
     e.preventDefault();
 
     const startFormData = new FormData(startForm);
+    console.log(startFormData.get('form-box'))
 
+    
 
 })

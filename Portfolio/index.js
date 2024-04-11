@@ -40,6 +40,7 @@ const aboutBtn = document.getElementById('about-btn');
 const projectsBtn = document.getElementById('projects-btn');
 const contactBtn = document.getElementById('contact-btn');
 const learnMoreBtn = document.getElementById('learn-more');
+const socialIcons = Array.from(document.getElementsByClassName('contact-items')); // get collection of elems in array format
 
 // preloader 
 const preloader = document.getElementById('preloader');
@@ -51,6 +52,7 @@ window.addEventListener('load', function() {
     })
 })
 
+// learn more btn -> about section
 learnMoreBtn.addEventListener('click', function() {
 
     let headerHeight = document.querySelector('.submenu-wrap').offsetHeight
@@ -110,6 +112,24 @@ contactBtn.addEventListener('click', function() {
         behavior: 'smooth'
     })
 })
+
+// pop anim for social icons
+socialIcons.forEach( (segment) => {
+    const icon = Array.from(segment.getElementsByTagName('img')) // get images from each segment
+
+    icon.forEach( (img) => {
+        img.addEventListener('mouseover', function() {
+            img.classList.add('pop-animation')
+        })
+    
+        img.addEventListener('animationend', function() {
+            img.classList.remove('pop-animation')
+        })
+
+    })
+})
+
+
 
 const backToTop = document.createElement('button'); // back to top of page 
 backToTop.textContent = 'Back to top'

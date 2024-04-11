@@ -42,13 +42,13 @@ p {
 }
 
 #preloader {
-    background: #202e45 url(./assets/loadingGif3Transparent.gif);
-    background-repeat: no-repeat;
+    background: #202e45 url(./assets/rain\ drops.svg);
+    width: 100%;
+    background-size: 25%;
     background-position: center;
     border-bottom: 3px solid black;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
-    background-size: 30%;
     height: 100vh; 
     width: 100vw;
     position: fixed;
@@ -63,12 +63,19 @@ p {
 }
 
 @keyframes collapse {
+
     0% {
         bottom: 0%;
     }
+
+    50% {
+        bottom: 0%;
+    }
+
     100% {
         bottom: 100%;
     }
+
 }
 
 /* can add blur/bg here
@@ -244,6 +251,9 @@ p {
 .about-section {
     background: var(--primary2);
 }
+.spotlights {
+    background: url(./assets/spotlights.svg);
+}
 .about-section h1 {
     padding-top: 2%;
     text-align: center;
@@ -361,6 +371,8 @@ p {
 }
 .projects-list > div img {
     width: 50%;
+    min-height: 300px;
+    margin: auto 0;
     border-radius: 10px;
     transition: .3s;
     box-shadow: 2px 2px 3px black;
@@ -433,17 +445,19 @@ p {
     filter: drop-shadow(0 0 1px var(--accent));
 }
 .contact-items img:hover {
-    animation: wiggle .5s normal ease-in-out;
     cursor: pointer;
 }
 
-@keyframes wiggle {
-    10% {
-        transform: rotateZ(5deg);
-    }
+.pop-animation {
+    animation: pop .3s normal;
+}
+
+@keyframes pop {
+
     50% {
-        transform: rotateZ(-5deg)
+        transform: scale(1.1);
     }
+
 }
 
 .footer {
@@ -571,7 +585,7 @@ p {
   }
 
   /* Average Iphone */
-  @media screen and (max-width: 430px) {
+  @media screen and (max-width: 450px) {
     .innerWrap {
         font-size: 1.5em;
     }
@@ -654,6 +668,7 @@ p {
     .projects-list > div img {
         width: 100%;
         margin-bottom: 5%;
+        min-height: 250px;
     }
     .contact-items img {
         margin: 10% 10%;
