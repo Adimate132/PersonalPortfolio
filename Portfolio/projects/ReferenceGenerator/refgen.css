@@ -45,7 +45,6 @@ html, body {
     background: var(--primary) url(./assets/rain\ day.svg);
     aspect-ratio: 900/600;
     background-position: center;
-    border-bottom: 3px solid var(--blackSnake);
     background-size: 30%;
     height: 100vh; 
     width: 100vw;
@@ -147,6 +146,24 @@ html, body {
 }
 
 
+#generated-images {
+    width: 90%;
+    margin: 5% auto;
+    object-fit: cover;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1em;
+    
+}
+#generated-images img {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    border: 1px solid var(--blackSnake);
+    box-shadow: 3px 3px 5px var(--blackSnake);
+
+}
+
 .footer {
     color: var(--blackSnake);
     padding-top: .5%;
@@ -170,6 +187,16 @@ html, body {
         font-size: 2em;
         margin-top: 2%;
     }
+
+    #generated-images {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    #generated-images img {
+        height: 100px;
+        width: 100px;
+    }
+    
 }
 
 @media (max-width: 600px) {
@@ -182,5 +209,14 @@ html, body {
     #form-box button {
         width: 40%; 
         padding: 2% 0;
+    }
+
+    #generated-images {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    #generated-images img {
+        height: 100px;
+        width: 100px;
     }
 }
