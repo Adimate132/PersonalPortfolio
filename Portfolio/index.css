@@ -372,6 +372,7 @@ p {
 .projects-list > div img {
     width: 50%;
     min-height: 300px;
+    object-fit: cover;
     margin: auto 0;
     border-radius: 10px;
     transition: .3s;

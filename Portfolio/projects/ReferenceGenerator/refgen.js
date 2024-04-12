@@ -16,8 +16,23 @@ startForm.addEventListener('submit', function(e) {
     e.preventDefault();
 
     const startFormData = new FormData(startForm);
-    console.log(startFormData.get('form-box'))
+    const input = startFormData.get('form-box')
 
-    
+    // api call test
 
+    fetchData();
+    async function fetchData() {
+        try {
+            const response = await  fetch(`https://pokeapi.co/api/v2/pokemon/${input}`, {method: 'GET'});
+            if (!response.ok)
+                throw new Error("Could not fetch resource")
+
+                const data = await response.json();
+                alert(`${data.name} is a pokemon :D`)
+        }
+        catch(error) {
+            console.log(error)
+            alert(`${input} is not a pokemon :(`)
+        }
+    }
 })
