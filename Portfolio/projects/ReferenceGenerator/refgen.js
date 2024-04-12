@@ -16,7 +16,7 @@ startForm.addEventListener('submit', function(e) {
     e.preventDefault();
 
     const startFormData = new FormData(startForm);
-    const input = startFormData.get('form-box')
+    const input = startFormData.get('form-box').trim().toLowerCase()
 
     // api call test
 
