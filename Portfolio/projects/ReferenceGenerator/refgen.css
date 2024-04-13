@@ -134,6 +134,7 @@ html, body {
     transition: .3s;
     font-family: inherit;
     font-size: 1.5em;
+    color: var(--blackSnake);
 }
 #form-box button:hover {
     transform: scale(1.05);
@@ -200,6 +201,7 @@ html, body {
 @media (max-width: 600px) {
     .content {
         width: 100%;
+        filter: opacity(.85);
     }
     #form-box input {
         font-size: 2em;
