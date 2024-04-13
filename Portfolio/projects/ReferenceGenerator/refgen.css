@@ -16,6 +16,7 @@ html, body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    overflow-x: hidden;
 
 }
 
@@ -34,12 +35,6 @@ html, body {
     padding: 0;
     height: 100%;
 }
-
-/* 
-.container {
-
-}
- */
 
 #preloader {
     background: var(--primary) url(./assets/rain\ day.svg);
@@ -75,12 +70,6 @@ html, body {
 
 }
 
-.container {
-    color: var(--whiteFox);
-    margin: 0 10%;
-    
-}
-
 .header {
     text-shadow: 0px 0px 2px var(--blackSnake);
     margin: 0;
@@ -90,14 +79,21 @@ html, body {
     font-weight: bold;
 }
 
-.content {
+/*
+.container {
+
+}
+*/
+
+#form-wrap {
     text-shadow: 0px 0px 2px var(--blackSnake);
     padding: 1%;
     background: linear-gradient(to right, var(--primary), var(--secondary), var(--primary));
     border-radius: 50px;
     width: 75%;
-    margin: 0 auto;
     filter: opacity(.9);
+    margin: 0 auto;
+
 }
 
 #form-box {
@@ -120,9 +116,12 @@ html, body {
     text-indent: 10px;
     font-size: 1.2em;
     transition: .3s;
+    border: 3px solid transparent;
 }
 #form-box input:focus {
     color: var(--blackSnake);
+    border: 3px solid var(--accent);
+
 }
 #form-box button {
     width: 15%;
@@ -135,44 +134,93 @@ html, body {
     font-family: inherit;
     font-size: 1.5em;
     color: var(--blackSnake);
+    border: 3px solid transparent;
 }
 #form-box button:hover {
     transform: scale(1.05);
+    border: 3px solid var(--accent);
 
 }
 #form-box button:active {
     transform: scale(1);
 }
 
+#grid-wrap { 
+    width: 80%;
+    margin: 3em auto;
+    text-align: center;
+}
 
+#choose-image-text {
+    padding: 0;
+    margin: 3% 0;
+    color: var(--blackSnake);
+    font-weight: bold;
+    text-shadow: 0 0 1px var(--whiteFox);
+    text-align: center;
+}
 #generated-images {
-    width: 90%;
-    margin: 5% auto;
-    object-fit: cover;
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 1em;
-    
+    grid-gap: 1.5em;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-auto-rows: 150px;
+    grid-auto-flow: dense;
 }
 #generated-images img {
-    width: 150px;
-    height: 150px;
     border-radius: 10px;
     border: 1px solid var(--blackSnake);
-    box-shadow: 3px 3px 5px var(--blackSnake);
+    box-shadow: 1px 1px 5px var(--blackSnake);
+    transition: .3s;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+#generated-images img:hover {
+    transform: scale(1.1);
+}
 
+#chosen-image {
+    display: none;
+    width: 50%;
+    height: 50%;
+    border-radius: 30px;
+    margin: 0 auto;
+}
+
+.fadein-animation {
+    animation: fadein 1s forwards;
+}
+.fadeout-animation {
+    animation: fadeout 1s forwards;
+}
+
+@keyframes fadein {
+    from {
+        filter: opacity(0);
+    }
+    to {
+        filter: opacity(1);
+    }
+}
+@keyframes fadeout {
+    from {
+        filter: opacity(1);
+    }
+    to {
+        filter: opacity(0);
+    }
 }
 
 .footer {
+    margin-top: auto;
     color: var(--blackSnake);
     padding-top: .5%;
     text-align: center;
 }
 
-
 @media (max-width: 850px) {
 
-    .content { 
+    #form-wrap { 
         min-height: 200px;
     }
 
@@ -186,21 +234,12 @@ html, body {
         font-size: 2em;
         margin-top: 2%;
     }
-
-    #generated-images {
-        grid-template-columns: 1fr 1fr 1fr;
-    }
-
-    #generated-images img {
-        height: 100px;
-        width: 100px;
-    }
     
 }
 
 @media (max-width: 600px) {
-    .content {
-        width: 100%;
+    #form-wrap {
+        width: 90%;
         filter: opacity(.85);
     }
     #form-box input {
@@ -212,11 +251,7 @@ html, body {
     }
 
     #generated-images {
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     }
 
-    #generated-images img {
-        height: 100px;
-        width: 100px;
-    }
 }

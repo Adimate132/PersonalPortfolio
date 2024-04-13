@@ -18,19 +18,19 @@
         <h1>Reference Image Generator</h1>
         </div>
 
-        <div class="content">
+        <div id="form-wrap">
             <h2 style="text-align: center;"> Enter in tags to start </h2>
 
             <form id="form-box">
-                <input required type="text" name="form-box" placeholder="Enter tags">
+                <input required type="text" id="tags-input" name="tags-input" placeholder="Enter tags">
                 <button type="submit"> Start! </button>
             </form>
-            
-        </div>
-        <div id="generated-images">
-          
         </div>
 
+        <div id="grid-wrap">
+          <h2 id="choose-image-text" style="display: none"> Choose an image! </h2>
+          <div id="generated-images"></div>
+        </div>
     </div>
     <div class="footer">
         <small> Made by Adam Hassan - 2024</small>
