@@ -1,3 +1,20 @@
+// firebase imports
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js"
+import { getDatabase, ref, onValue, push } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"
+// link database
+const appSettings = {
+    databaseURL: "https://fir-test-a92b3-default-rtdb.firebaseio.com/"
+}
+
+const app = initializeApp(appSettings)
+const database = getDatabase(app)
+
+// ref for db -- users
+const adminPosts = ref(database, "adminPosts")
+// end of firebase setup-------------------------------------------------------
+
+
+
 // preloader 
 const preloader = document.getElementById('preloader');
 window.addEventListener('load', function() {
@@ -12,8 +29,15 @@ window.addEventListener('load', function() {
 const startForm = document.getElementById('form-box');
 const imageGrid = document.getElementById('generated-images')
 const chooseImgText = document.getElementById('choose-image-text')
+const contentContainer = document.getElementById('container')
 const gridWrap = document.getElementById('grid-wrap')
 const formWrap = document.getElementById('form-wrap')
+
+const uploadPopup = document.getElementById('upload-drawing-popup')
+const closePopupBtn = document.getElementById('close-btn')
+const pieceForm = document.getElementById('submit-piece-form')
+
+const timer = document.getElementById('timer')
 const maxPhotos = 12
 
 startForm.addEventListener('submit', function(e) {
@@ -80,19 +104,20 @@ document.addEventListener('click', function(event) {
         fadeout(chooseImgText) // remove image text
         fadeout(formWrap) // remove formwrap 
 
-        gridWrap.appendChild(chosenImg)
         fadein(chosenImg) // fade in chosen image
+        gridWrap.appendChild(chosenImg)
 
-        setTimeout(refreshPage, 5000) // refresh page after 3 minutes
+        startCountdown()
 
+        this.removeEventListener
     }
 })
 
 function fadeout(element) {
     element.classList.add('fadeout-animation')
     element.addEventListener('animationend', function() { 
-        element.style.display = 'none'
         element.classList.remove('fadeout-animation')
+        element.style.display = 'none'
     })
 }
 
@@ -104,6 +129,79 @@ function fadein(element) {
     })
 }
 
-function refreshPage() {
-    window.location.reload();
+function startCountdown() {
+    fadein(timer);
+    let minutes = 5
+    let seconds = 0
+
+    setTimeout(() => { // ofset 3000ms for timer to display first
+
+        const skipTimerBtn = document.createElement('button')
+        skipTimerBtn.id = 'skip-timer-btn'
+        skipTimerBtn.textContent = 'End Timer'
+        contentContainer.appendChild(skipTimerBtn)
+        fadein(skipTimerBtn)
+
+        skipTimerBtn.addEventListener('click', function() {
+            minutes = 0
+            seconds = 0
+        })
+
+        const tick = setInterval(() => {
+
+            if (seconds >= 10) {
+                timer.textContent = `Time Left: ${minutes}:${seconds}`
+            }
+            else if (seconds < 10) {
+                timer.textContent = `Time Left: ${minutes}:0${seconds}`
+            }
+
+            seconds-- // decrement seconds 
+            if (seconds <= 0) { 
+
+                if (minutes <= 0 && seconds <= 0) { // on time up
+                    timer.textContent = `Time's Up!`
+                    clearInterval(tick) // stop countdown
+                    fadeout(timer) // remove timer 
+
+                    // change skip button to upload image
+                    setTimeout(() => {
+                        fadein(skipTimerBtn)
+                        skipTimerBtn.id = "upload-drawing-btn"
+                        skipTimerBtn.textContent = "Upload Drawing"
+
+                        addDrawingPopup(skipTimerBtn)
+                    }, 1500)
+
+                }
+                else {
+                    minutes-- // decrement minutes 
+                    seconds = 59
+                }
+            }
+
+        }, 1000)
+    
+    }, 1000)
+
+}
+
+/*
+const uploadPopup = document.getElementById('upload-drawing-popup')
+const closePopupBtn = document.getElementById('closeBtn')
+const pieceForm = document.getElementById('submit-piece-form')
+*/
+
+// on upload piece btn click 
+function addDrawingPopup(uploadBtn) {
+
+    // upload btn click
+    uploadBtn.addEventListener('click', function() {
+        uploadPopup.style.display = 'flex'
+
+        // close popup 
+        closePopupBtn.addEventListener('click', function() {
+            fadeout(uploadPopup)
+        })
+    })
 }

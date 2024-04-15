@@ -12,25 +12,42 @@
     <!-- preloader -->
     <div id="preloader"></div>
 
-    <div class="container">
+    <div id="container">
 
-        <div class="header">
-        <h1>Reference Image Generator</h1>
+      <!-- upload popup -->
+      <div id="upload-drawing-popup">
+
+        <div class="popup-close">
+          <button id="close-btn"> X </button>
+          <h1> Submit your piece! </h1>
+        </div>
+        
+        <div class="popup-inner">
+          <form id="submit-piece-form">
+            <input required type="file" name='file' accept="image/png, image/jpg">
+            <button type="submit"> Submit </button>
+          </form>
         </div>
 
-        <div id="form-wrap">
-            <h2 style="text-align: center;"> Enter in tags to start </h2>
+      </div>
 
-            <form id="form-box">
-                <input required type="text" id="tags-input" name="tags-input" placeholder="Enter tags">
-                <button type="submit"> Start! </button>
-            </form>
-        </div>
+      <div class="header">
+      <h1>Reference Image Generator</h1>
+      <h2 id="timer">DRAW!!</h2>
+      </div>
 
-        <div id="grid-wrap">
-          <h2 id="choose-image-text" style="display: none"> Choose an image! </h2>
-          <div id="generated-images"></div>
-        </div>
+      <div id="form-wrap">
+        <h2 style="text-align: center;"> Enter in tags to start </h2>
+        <form id="form-box">
+            <input required type="text" id="tags-input" name="tags-input" placeholder="Enter tags">
+            <button type="submit"> Start! </button>
+        </form>
+      </div>
+
+      <div id="grid-wrap">
+        <h2 id="choose-image-text" style="display: none"> Choose an image! </h2>
+        <div id="generated-images"></div>
+      </div>
     </div>
     <div class="footer">
         <small> Made by Adam Hassan - 2024</small>
