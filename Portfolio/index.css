@@ -40,6 +40,11 @@ h1, h2, h3, p {
 p {
     font-family: "Hind";
 }
+marquee {
+    background-color: var(--accent);
+    color: var(--text2);
+    font-weight: bold;
+}
 
 #preloader {
     background: #202e45 url(./assets/bubbles.svg);
@@ -253,7 +258,7 @@ p {
     background: var(--primary2);
 }
 .spotlights {
-    background: url(./assets/spotlights.svg);
+    /* background: url(./assets/spotlights.svg); */
 }
 .about-section h1 {
     padding-top: 2%;
